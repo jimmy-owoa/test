@@ -16,20 +16,6 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :nombre, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :nombre, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:nombre) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :giro, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :giro, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:giro) %>
-  </div>
-  <div class="form-group">
     <%= f.label :rut, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :rut, :class => 'form-control' %>
@@ -37,60 +23,354 @@
     <%=f.error_span(:rut) %>
   </div>
   <div class="form-group">
-    <%= f.label :nombre_contacto, :class => 'control-label col-lg-2' %>
+    <%= f.label :razon_social, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :nombre_contacto, :class => 'form-control' %>
+      <%= f.text_field :razon_social, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:nombre_contacto) %>
+    <%=f.error_span(:razon_social) %>
   </div>
   <div class="form-group">
-    <%= f.label :telefono, :class => 'control-label col-lg-2' %>
+    <%= f.label :estado_general, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :telefono, :class => 'form-control' %>
+      <%= f.text_field :estado_general, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:telefono) %>
+    <%=f.error_span(:estado_general) %>
   </div>
   <div class="form-group">
-    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <%= f.label :observaciones, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :email, :class => 'form-control' %>
+      <%= f.text_field :observaciones, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:email) %>
+    <%=f.error_span(:observaciones) %>
   </div>
   <div class="form-group">
-    <%= f.label :descripcion, :class => 'control-label col-lg-2' %>
+    <%= f.label :observaciones_agenda, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :descripcion, :class => 'form-control' %>
+      <%= f.text_field :observaciones_agenda, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:descripcion) %>
+    <%=f.error_span(:observaciones_agenda) %>
   </div>
   <div class="form-group">
-    <%= f.label :estado, :class => 'control-label col-lg-2' %>
+    <%= f.label :situacion_competencias_basicas, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :estado, :class => 'form-control' %>
+      <%= f.text_field :situacion_competencias_basicas, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:estado) %>
+    <%=f.error_span(:situacion_competencias_basicas) %>
   </div>
   <div class="form-group">
-    <%= f.label :pais, :class => 'control-label col-lg-2' %>
+    <%= f.label :competencias_basicas_categoria, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :pais, :class => 'form-control' %>
+      <%= f.text_field :competencias_basicas_categoria, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:pais) %>
+    <%=f.error_span(:competencias_basicas_categoria) %>
   </div>
   <div class="form-group">
-    <%= f.label :ciudad, :class => 'control-label col-lg-2' %>
+    <%= f.label :competencias_basicas_porcentaje, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :ciudad, :class => 'form-control' %>
+      <%= f.text_field :competencias_basicas_porcentaje, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:ciudad) %>
+    <%=f.error_span(:competencias_basicas_porcentaje) %>
   </div>
   <div class="form-group">
-    <%= f.label :direccion, :class => 'control-label col-lg-2' %>
+    <%= f.label :competencias_basicas_fecha_vigencia, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :direccion, :class => 'form-control' %>
+      <%= f.text_field :competencias_basicas_fecha_vigencia, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:direccion) %>
+    <%=f.error_span(:competencias_basicas_fecha_vigencia) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :competencias_basicas_infraestructura, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :competencias_basicas_infraestructura, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:competencias_basicas_infraestructura) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comptencias_basicas_recursos_humanos, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :comptencias_basicas_recursos_humanos, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:comptencias_basicas_recursos_humanos) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :competencias_basicas_calidad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :competencias_basicas_calidad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:competencias_basicas_calidad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :competencias_basicas_medio_ambiente, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :competencias_basicas_medio_ambiente, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:competencias_basicas_medio_ambiente) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :competencias_basicas_seguridad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :competencias_basicas_seguridad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:competencias_basicas_seguridad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :competencias_basicas_conectividad_y_automatizacion, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :competencias_basicas_conectividad_y_automatizacion, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:competencias_basicas_conectividad_y_automatizacion) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :competencias_basicas_comunidad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :competencias_basicas_comunidad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:competencias_basicas_comunidad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_anio, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_anio, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_anio) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_tamano, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_tamano, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_tamano) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_patrimonio, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_patrimonio, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_patrimonio) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_capital_de_trabajo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_capital_de_trabajo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_capital_de_trabajo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_total_activos, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_total_activos, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_total_activos) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_deuda, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_deuda, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_deuda) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_capital_de_trabajo_relativo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_capital_de_trabajo_relativo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_capital_de_trabajo_relativo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_liquidez, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_liquidez, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_liquidez) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_razon_de_endeudamiento, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_razon_de_endeudamiento, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_razon_de_endeudamiento) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_leverage, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_leverage, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_leverage) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_rentabilidad_activos, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_rentabilidad_activos, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_rentabilidad_activos) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_rentabilidad_patrimonio, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_rentabilidad_patrimonio, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_rentabilidad_patrimonio) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_rentabilidad_ventas, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_rentabilidad_ventas, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_rentabilidad_ventas) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_indice_de_quiebra, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_indice_de_quiebra, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_indice_de_quiebra) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_ingreso_de_explotacion, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_ingreso_de_explotacion, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_ingreso_de_explotacion) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :financiero_razon_acida, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :financiero_razon_acida, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:financiero_razon_acida) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :antecedente_comercial_cantidad_documentos_boletin, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :antecedente_comercial_cantidad_documentos_boletin, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:antecedente_comercial_cantidad_documentos_boletin) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :antecedente_comercial_monto_total_boletin, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :antecedente_comercial_monto_total_boletin, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:antecedente_comercial_monto_total_boletin) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :antecedente_comercial_cantidad_documentos_morosidad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :antecedente_comercial_cantidad_documentos_morosidad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:antecedente_comercial_cantidad_documentos_morosidad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :antecedente_comercial_monto_total_morosidad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :antecedente_comercial_monto_total_morosidad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:antecedente_comercial_monto_total_morosidad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :antecedente_comercial_cantidad_documentos_protestos, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :antecedente_comercial_cantidad_documentos_protestos, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:antecedente_comercial_cantidad_documentos_protestos) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :antecedente_comercial_monto_total_protesto, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :antecedente_comercial_monto_total_protesto, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:antecedente_comercial_monto_total_protesto) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tributario_fecha_de_actualizacion, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tributario_fecha_de_actualizacion, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tributario_fecha_de_actualizacion) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tributario_facturacion_electronica, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tributario_facturacion_electronica, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tributario_facturacion_electronica) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tributario_observacion_alerta, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tributario_observacion_alerta, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tributario_observacion_alerta) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tributario_observacion_irregularidad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tributario_observacion_irregularidad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tributario_observacion_irregularidad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mutualidad_fecha, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :mutualidad_fecha, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:mutualidad_fecha) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mutualidad_indice_gravedad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :mutualidad_indice_gravedad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:mutualidad_indice_gravedad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mutualidad_indice_de_frecuencia, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :mutualidad_indice_de_frecuencia, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:mutualidad_indice_de_frecuencia) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contacto_nombre, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contacto_nombre, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contacto_nombre) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contacto_telefono, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contacto_telefono, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contacto_telefono) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contacto_email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contacto_email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contacto_email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :instalaciones_ciudad_casa_matriz, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :instalaciones_ciudad_casa_matriz, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:instalaciones_ciudad_casa_matriz) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :instalaciones_direccion_casa_matriz, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :instalaciones_direccion_casa_matriz, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:instalaciones_direccion_casa_matriz) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tipo_de_certificacion_iso, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tipo_de_certificacion_iso, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tipo_de_certificacion_iso) %>
   </div>
 
   <div class="form-group">

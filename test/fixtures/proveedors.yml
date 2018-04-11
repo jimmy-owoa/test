@@ -1,29 +1,109 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  giro: MyText
   rut: MyString
-  nombre_contacto: MyString
-  telefono: MyString
-  email: MyString
-  descripcion: MyText
-  estado: MyText
-  giro: MyText
-  pais: MyString
-  ciudad: MyString
-  direccion: MyText
+  razon_social: MyString
+  estado_general: MyString
+  observaciones: MyText
+  observaciones_agenda: MyText
+  situacion_competencias_basicas: MyString
+  competencias_basicas_categoria: MyString
+  competencias_basicas_porcentaje: 
+  competencias_basicas_fecha_vigencia: 2018-04-11
+  competencias_basicas_infraestructura: 
+  comptencias_basicas_recursos_humanos: 
+  competencias_basicas_calidad: 
+  competencias_basicas_medio_ambiente: 
+  competencias_basicas_seguridad: 
+  competencias_basicas_conectividad_y_automatizacion: 
+  competencias_basicas_comunidad: 
+  financiero_anio: 1
+  financiero_tamano: 1
+  financiero_patrimonio: 
+  financiero_capital_de_trabajo: 
+  financiero_total_activos: 
+  financiero_deuda: 
+  financiero_capital_de_trabajo_relativo: 
+  financiero_liquidez: 
+  financiero_razon_de_endeudamiento: 
+  financiero_leverage: 
+  financiero_rentabilidad_activos: 
+  financiero_rentabilidad_activos: 
+  financiero_rentabilidad_patrimonio: 
+  financiero_rentabilidad_ventas: 
+  financiero_indice_de_quiebra: 
+  financiero_ingreso_de_explotacion: 
+  financiero_razon_acida: 
+  antecedente_comercial_cantidad_documentos_boletin: 1
+  antecedente_comercial_monto_total_boletin: 
+  antecedente_comercial_cantidad_documentos_morosidad: 1
+  antecedente_comercial_monto_total_morosidad: 1
+  antecedente_comercial_cantidad_documentos_propuestos: 1
+  antecedente_comercial_monto_total_protesto: 1
+  tributario_fecha_de_actualizacion: 2018-04-11
+  tributario_facturacion_electronica: MyString
+  tributario_observacion_alerta: MyString
+  tributario_observacion_irregularidad: MyString
+  mutualidad_fecha: 2018-04-11
+  mutualidad_indice_gravedad: 
+  mutualidad_indice_de_frecuencia: 
+  contacto_nombre: MyString
+  contacto_telefono: MyString
+  contacto_email: MyString
+  instalaciones_ciudad_casa_matriz: MyString
+  instalaciones_direccion_casa_matriz: MyText
+  tipo_de_certificacion_iso: MyString
 
 two:
-  nombre: MyString
-  giro: MyText
   rut: MyString
-  nombre_contacto: MyString
-  telefono: MyString
-  email: MyString
-  descripcion: MyText
-  estado: MyText
-  giro: MyText
-  pais: MyString
-  ciudad: MyString
-  direccion: MyText
+  razon_social: MyString
+  estado_general: MyString
+  observaciones: MyText
+  observaciones_agenda: MyText
+  situacion_competencias_basicas: MyString
+  competencias_basicas_categoria: MyString
+  competencias_basicas_porcentaje: 
+  competencias_basicas_fecha_vigencia: 2018-04-11
+  competencias_basicas_infraestructura: 
+  comptencias_basicas_recursos_humanos: 
+  competencias_basicas_calidad: 
+  competencias_basicas_medio_ambiente: 
+  competencias_basicas_seguridad: 
+  competencias_basicas_conectividad_y_automatizacion: 
+  competencias_basicas_comunidad: 
+  financiero_anio: 1
+  financiero_tamano: 1
+  financiero_patrimonio: 
+  financiero_capital_de_trabajo: 
+  financiero_total_activos: 
+  financiero_deuda: 
+  financiero_capital_de_trabajo_relativo: 
+  financiero_liquidez: 
+  financiero_razon_de_endeudamiento: 
+  financiero_leverage: 
+  financiero_rentabilidad_activos: 
+  financiero_rentabilidad_activos: 
+  financiero_rentabilidad_patrimonio: 
+  financiero_rentabilidad_ventas: 
+  financiero_indice_de_quiebra: 
+  financiero_ingreso_de_explotacion: 
+  financiero_razon_acida: 
+  antecedente_comercial_cantidad_documentos_boletin: 1
+  antecedente_comercial_monto_total_boletin: 
+  antecedente_comercial_cantidad_documentos_morosidad: 1
+  antecedente_comercial_monto_total_morosidad: 1
+  antecedente_comercial_cantidad_documentos_propuestos: 1
+  antecedente_comercial_monto_total_protesto: 1
+  tributario_fecha_de_actualizacion: 2018-04-11
+  tributario_facturacion_electronica: MyString
+  tributario_observacion_alerta: MyString
+  tributario_observacion_irregularidad: MyString
+  mutualidad_fecha: 2018-04-11
+  mutualidad_indice_gravedad: 
+  mutualidad_indice_de_frecuencia: 
+  contacto_nombre: MyString
+  contacto_telefono: MyString
+  contacto_email: MyString
+  instalaciones_ciudad_casa_matriz: MyString
+  instalaciones_direccion_casa_matriz: MyText
+  tipo_de_certificacion_iso: MyString
