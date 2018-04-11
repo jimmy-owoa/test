@@ -1,112 +1,182 @@
 <%- model_class = Proveedor -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:rut) %>:</strong></dt>
-  <dd><%= @proveedor.rut %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:razon_social) %>:</strong></dt>
-  <dd><%= @proveedor.razon_social %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:estado_general) %>:</strong></dt>
-  <dd><%= @proveedor.estado_general %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:observaciones) %>:</strong></dt>
-  <dd><%= @proveedor.observaciones %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:observaciones_agenda) %>:</strong></dt>
-  <dd><%= @proveedor.observaciones_agenda %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:situacion_competencias_basicas) %>:</strong></dt>
-  <dd><%= @proveedor.situacion_competencias_basicas %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_categoria) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_categoria %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_porcentaje) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_porcentaje %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_fecha_vigencia) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_fecha_vigencia %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_infraestructura) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_infraestructura %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comptencias_basicas_recursos_humanos) %>:</strong></dt>
-  <dd><%= @proveedor.comptencias_basicas_recursos_humanos %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_calidad) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_calidad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_medio_ambiente) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_medio_ambiente %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_seguridad) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_seguridad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_conectividad_y_automatizacion) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_conectividad_y_automatizacion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:competencias_basicas_comunidad) %>:</strong></dt>
-  <dd><%= @proveedor.competencias_basicas_comunidad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_anio) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_anio %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_tamano) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_tamano %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_patrimonio) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_patrimonio %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_capital_de_trabajo) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_capital_de_trabajo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_total_activos) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_total_activos %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_deuda) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_deuda %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_capital_de_trabajo_relativo) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_capital_de_trabajo_relativo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_liquidez) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_liquidez %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_razon_de_endeudamiento) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_razon_de_endeudamiento %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_leverage) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_leverage %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_rentabilidad_activos) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_rentabilidad_activos %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_rentabilidad_patrimonio) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_rentabilidad_patrimonio %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_rentabilidad_ventas) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_rentabilidad_ventas %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_indice_de_quiebra) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_indice_de_quiebra %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_ingreso_de_explotacion) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_ingreso_de_explotacion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:financiero_razon_acida) %>:</strong></dt>
-  <dd><%= @proveedor.financiero_razon_acida %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:antecedente_comercial_cantidad_documentos_boletin) %>:</strong></dt>
-  <dd><%= @proveedor.antecedente_comercial_cantidad_documentos_boletin %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:antecedente_comercial_monto_total_boletin) %>:</strong></dt>
-  <dd><%= @proveedor.antecedente_comercial_monto_total_boletin %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:antecedente_comercial_cantidad_documentos_morosidad) %>:</strong></dt>
-  <dd><%= @proveedor.antecedente_comercial_cantidad_documentos_morosidad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:antecedente_comercial_monto_total_morosidad) %>:</strong></dt>
-  <dd><%= @proveedor.antecedente_comercial_monto_total_morosidad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:antecedente_comercial_cantidad_documentos_protestos) %>:</strong></dt>
-  <dd><%= @proveedor.antecedente_comercial_cantidad_documentos_protestos %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:antecedente_comercial_monto_total_protesto) %>:</strong></dt>
-  <dd><%= @proveedor.antecedente_comercial_monto_total_protesto %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tributario_fecha_de_actualizacion) %>:</strong></dt>
-  <dd><%= @proveedor.tributario_fecha_de_actualizacion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tributario_facturacion_electronica) %>:</strong></dt>
-  <dd><%= @proveedor.tributario_facturacion_electronica %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tributario_observacion_alerta) %>:</strong></dt>
-  <dd><%= @proveedor.tributario_observacion_alerta %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tributario_observacion_irregularidad) %>:</strong></dt>
-  <dd><%= @proveedor.tributario_observacion_irregularidad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mutualidad_fecha) %>:</strong></dt>
-  <dd><%= @proveedor.mutualidad_fecha %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mutualidad_indice_gravedad) %>:</strong></dt>
-  <dd><%= @proveedor.mutualidad_indice_gravedad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mutualidad_indice_de_frecuencia) %>:</strong></dt>
-  <dd><%= @proveedor.mutualidad_indice_de_frecuencia %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:contacto_nombre) %>:</strong></dt>
-  <dd><%= @proveedor.contacto_nombre %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:contacto_telefono) %>:</strong></dt>
-  <dd><%= @proveedor.contacto_telefono %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:contacto_email) %>:</strong></dt>
-  <dd><%= @proveedor.contacto_email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:instalaciones_ciudad_casa_matriz) %>:</strong></dt>
-  <dd><%= @proveedor.instalaciones_ciudad_casa_matriz %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:instalaciones_direccion_casa_matriz) %>:</strong></dt>
-  <dd><%= @proveedor.instalaciones_direccion_casa_matriz %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tipo_de_certificacion_iso) %>:</strong></dt>
-  <dd><%= @proveedor.tipo_de_certificacion_iso %></dd>
-</dl>
+<div class="container table-section">
+  <h3>Proveedor: <%= @proveedor.razon_social + ' | Rut: ' + @proveedor.rut  + ' | Estado: ' + @proveedor.estado_general%></h3><hr>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="category_1-tab" data-toggle="tab" href="#category_1" role="tab" aria-controls="category_1" aria-selected="true">Competencias básicas </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="category_2-tab" data-toggle="tab" href="#category_2" role="tab" aria-controls="category_2" aria-selected="false">Financiero</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="category_3-tab" data-toggle="tab" href="#category_3" role="tab" aria-controls="category_3" aria-selected="false">Antecedentes comerciales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="category_4-tab" data-toggle="tab" href="#category_4" role="tab" aria-controls="category_4" aria-selected="false">Tributario</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="category_5-tab" data-toggle="tab" href="#category_5" role="tab" aria-controls="category_5" aria-selected="false">Mutualidad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="category_6-tab" data-toggle="tab" href="#category_6" role="tab" aria-controls="category_6" aria-selected="false">Contacto</a>
+      </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="category_1" role="tabpanel" aria-labelledby="home-tab">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+            <strong>Siuación Competencias Básicas: </strong>
+            <dd><%= @proveedor.situacion_competencias_basicas %></dd>
+            <strong>Categoría:</strong>
+            <dd><%= @proveedor.competencias_basicas_categoria %></dd>
+            <strong>Porcentaje:</strong>
+            <% if @proveedor.competencias_basicas_porcentaje == nil %>
+              <dd><%= 'Sin registro' %> </dd>
+            <% else %>
+              <dd><%= @proveedor.competencias_basicas_porcentaje %></dd>
+            <% end %>
+            <strong>Fecha vigencia:</strong>
+            <dd><%= @proveedor.competencias_basicas_fecha_vigencia %></dd>
+            <strong>Infraestructura:</strong>
+            <dd><%= @proveedor.competencias_basicas_infraestructura %></dd>
+            <strong>Recursos humanos:</strong>
+            <dd><%= @proveedor.comptencias_basicas_recursos_humanos %></dd>
+            <strong>Calidad:</strong>
+            <dd><%= @proveedor.competencias_basicas_calidad %></dd>
+            <strong>Medio ambiente:</strong>
+            <dd><%= @proveedor.competencias_basicas_medio_ambiente %></dd>
+            <strong>Seguridad:</strong>
+            <dd><%= @proveedor.competencias_basicas_seguridad %></dd>
+            <strong>Conectividad y automatización:</strong>
+            <dd><%= @proveedor.competencias_basicas_conectividad_y_automatizacion%></dd>
+            <strong>Comunidad:</strong>
+            <dd><%= @proveedor.competencias_basicas_comunidad%></dd>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+      <div class="tab-pane fade" id="category_2" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+            <strong>Año:</strong>
+            <dd><%= @proveedor.financiero_anio%></dd>
+            <strong>Tamaño:</strong>
+            <dd><%= @proveedor.financiero_tamano%></dd>
+            <strong>Patrimonio (US$):</strong>
+            <dd><%= @proveedor.financiero_patrimonio%></dd>
+            <strong>Capital de trabajo (US$):</strong>
+            <dd><%= @proveedor.financiero_capital_de_trabajo%></dd>
+            <strong>Total activos (M$):</strong>
+            <dd><%= @proveedor.financiero_total_activos%></dd>
+            <strong>Total deuda (M$):</strong>
+            <dd><%= @proveedor.financiero_deuda%></dd>
+            <strong>Capital de trabajo relativo (%):</strong>
+            <dd><%= @proveedor.financiero_capital_de_trabajo_relativo%></dd>
+            <strong>Liquidez (veces):</strong>
+            <dd><%= @proveedor.financiero_liquidez%></dd>
+            <strong>Razón de endeudamiento (US$):</strong>
+            <dd><%= @proveedor.financiero_razon_de_endeudamiento%></dd>
+            <strong>Leverage (%):</strong>
+            <dd><%= @proveedor.financiero_leverage%></dd>
+            <strong>Rentabilidad Activos (%):</strong>
+            <dd><%= @proveedor.financiero_rentabilidad_activos%></dd>
+            <strong>Rentabilidad Patrimonio (%):</strong>
+            <dd><%= @proveedor.financiero_rentabilidad_patrimonio%></dd>
+            <strong>Rentabilidad Ventas (%):</strong>
+            <dd><%= @proveedor.financiero_rentabilidad_ventas%></dd>
+            <strong>Indice de quiebra (Decimal):</strong>
+            <dd><%= @proveedor.financiero_indice_de_quiebra%></dd>
+            <strong>Ingreso de explotación (M$):</strong>
+            <dd><%= @proveedor.financiero_ingreso_de_explotacion%></dd>
+            <strong>Razón ácida (veces):</strong>
+            <dd><%= @proveedor.financiero_razon_acida%></dd>
+
+
+          </blockquote>
+        </div>
+      </div>
+      </div>
+      <div class="tab-pane fade" id="category_3" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+            <strong>Cantidad Documentos Boletín:</strong>
+            <dd><%= @proveedor.antecedente_comercial_cantidad_documentos_boletin %></dd>
+            <strong>Monto Total Boletín Laboral ($): </strong>
+            <dd><%= @proveedor.antecedente_comercial_monto_total_boletin%></dd>
+            <strong>Cantidad Documentos Morosidad: </strong>
+            <dd><%= @proveedor.antecedente_comercial_cantidad_documentos_morosidad%></dd>
+            <strong>Monto Total Morosidad ($):</strong>
+            <dd><%= @proveedor.antecedente_comercial_monto_total_morosidad%></dd>
+            <strong>Cantidad Documentos Protesto:</strong>
+            <dd><%= @proveedor.antecedente_comercial_cantidad_documentos_protestos%></dd>
+            <strong>Monto Total Protesto:</strong>
+            <dd><%= @proveedor.antecedente_comercial_monto_total_protesto %></dd>
+          </blockquote>
+        </div>
+      </div>
+      </div>
+      <div class="tab-pane fade" id="category_4" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+            <strong>Fecha Actualización:</strong>
+            <dd><%= @proveedor.tributario_fecha_de_actualizacion %></dd>
+            <strong>Facturación Electrónica: </strong>
+            <dd><%= @proveedor.tributario_facturacion_electronica%></dd>
+            <strong>Observación Irregularidad: </strong>
+            <dd><%= @proveedor.tributario_observacion_irregularidad%></dd>
+            <strong>Observación de Alerta:</strong>
+            <dd><%= @proveedor.tributario_observacion_alerta%></dd>
+          </blockquote>
+        </div>
+      </div>
+      </div>
+      <div class="tab-pane fade" id="category_5" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+            <strong>Fecha:</strong>
+            <dd><%= @proveedor.mutualidad_fecha %></dd>
+            <strong>Índice de Gravedad: </strong>
+            <dd><%= @proveedor.mutualidad_indice_gravedad%></dd>
+            <strong>Índice de Frecuencia: </strong>
+            <dd><%= @proveedor.mutualidad_indice_de_frecuencia%></dd>
+          </blockquote>
+        </div>
+      </div>
+      </div>
+      <div class="tab-pane fade show" id="category_6" role="tabpanel" aria-labelledby="category_6-tab">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+            <hr>
+            <h4> Contacto </h4><hr>
+            <strong>Nombre:</strong>
+            <dd><%= @proveedor.contacto_nombre %></dd>
+            <strong>Teléfono: </strong>
+            <dd><%= @proveedor.contacto_telefono%></dd>
+            <strong>Email: </strong>
+            <dd><%= @proveedor.contacto_email%></dd>
+            <hr>
+            <h4> Instalaciones </h4><hr>
+            <strong>Ciudad de la Casa Matriz:</strong>
+            <dd><%= @proveedor.instalaciones_ciudad_casa_matriz%></dd>
+            <strong>Dirección de la Casa Matriz:</strong>
+            <dd><%= @proveedor.instalaciones_direccion_casa_matriz%></dd>
+            <hr>
+            <h4> Tipo de Certificaciones ISO: </h4><%= @proveedor.tipo_de_certificacion_iso%><hr>
+          </blockquote>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               user_proveedors_path, :class => 'btn btn-default'  %>
