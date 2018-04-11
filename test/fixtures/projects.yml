@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  country: MyString
+  region: MyString
+  sector_name: MyString
+  investment: 1
+  production: 1
+  unit_production: MyString
+  location: MyString
+  description: MyText
+  current_phase: 1
+  responsible: 1
+  contract_type: 1
+  latest_information: MyText
+  contact_name: MyString
+  contact_company: MyString
+  contact_job: MyString
+  contact_phone: MyString
+  contact_address: MyString
+  history: MyText
+
+two:
+  title: MyString
+  country: MyString
+  region: MyString
+  sector_name: MyString
+  investment: 1
+  production: 1
+  unit_production: MyString
+  location: MyString
+  description: MyText
+  current_phase: 1
+  responsible: 1
+  contract_type: 1
+  latest_information: MyText
+  contact_name: MyString
+  contact_company: MyString
+  contact_job: MyString
+  contact_phone: MyString
+  contact_address: MyString
+  history: MyText

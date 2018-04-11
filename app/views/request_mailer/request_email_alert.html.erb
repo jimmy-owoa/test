@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1></h1>
+    <p>
+      Se ha solicitado un nuevo registro.
+    </p>
+    <h4>
+      Datos de la solicitud:
+    </h4>
+    <h4>
+      Nombre: <%= @request.contact_person%> <br>
+      Empresa: <%= @request.business%> <br>
+      Ciudad: <%= @request.city%> <br>
+      Email: <%= @request.email%> <br>
+      Teléfono: <%= @request.phone%> <br>
+    </h4>
+  </body>
+</html>

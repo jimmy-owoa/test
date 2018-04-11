@@ -1,0 +1,196 @@
+<%= form_for [:admin, @project], :html => { :class => "form-horizontal project" } do |f| %>
+
+  <% if @project.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :country, options_for_select(Country.all.map{|i| [i.name, i.name]}), :class => 'form-control', multiple: true %>
+    </div>
+    <%=f.error_span(:main_works) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sector_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :sector_id, options_for_select(Sector.all.map{|i| [i.name, i.id]}, @project.sector_id), :class => 'form-control', multiple: true %>
+    </div>
+    <%=f.error_span(:sector) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :region, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :region, options_for_select(Region.all.map{|i| [i.name, i.name]}), :class => 'form-control', multiple: true %>
+    </div>
+    <%=f.error_span(:region) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :investment, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :investment, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:investment) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :production, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :production, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:production) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :unit_production, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :unit_production, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:unit_production) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :location, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:location) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :current_phase, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :current_phase, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:current_phase) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :responsible, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :responsible, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:responsible) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contract_type, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contract_type, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contract_type) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :latest_information, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :latest_information, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:latest_information) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_company, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_company, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_company) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_job, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_job, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_job) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_phone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_phone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_phone) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_address, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_address, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_address) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :history, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :history, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:history) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :project_types, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select(:project_type_ids, ProjectType.all, :id, :name, {:prompt => "Please Select a Type"}, {:multiple => true}) %>
+    </div>
+    <%=f.error_span(:project_types) %>
+  </div>
+  <div class="form-group">
+      <%= f.label :client, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.text_field :client, :class => 'form-control' %>
+      </div>
+      <%=f.error_span(:client) %>
+    </div>
+  <div class="form-group">
+    <%= f.label :owner, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :owner, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:owner) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :adjudications, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :adjudications, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:adjudications) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :main_works, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :main_works, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:main_works) %>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_projects_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reporter Suscriptions</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>Business</th>
+      <th>Job</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reporter_suscriptions.each do |suscription| %>
+      <tr>
+        <td><%= suscription.name %></td>
+        <td><%= suscription.email %></td>
+        <td><%= suscription.city %></td>
+        <td><%= suscription.business %></td>
+        <td><%= suscription.job %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

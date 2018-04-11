@@ -1,0 +1,71 @@
+<%- model_class = Project -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:region) %></th>
+      <th><%= model_class.human_attribute_name(:sector_name) %></th>
+      <th><%= model_class.human_attribute_name(:investment) %></th>
+      <th><%= model_class.human_attribute_name(:production) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:unit_production) %></th> -->
+      <th><%= model_class.human_attribute_name(:current_phase) %></th>
+      <th><%= model_class.human_attribute_name(:responsible) %></th>
+      <th><%= model_class.human_attribute_name(:contract_type) %></th>
+      <th><%= model_class.human_attribute_name(:contact_name) %></th>
+      <th><%= model_class.human_attribute_name(:contact_company) %></th>
+      <th><%= model_class.human_attribute_name(:contact_job) %></th>
+      <th><%= model_class.human_attribute_name(:contact_phone) %></th>
+      <th><%= model_class.human_attribute_name(:contact_address) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.id, admin_project_path(project) %></td>
+        <td><%= project.title %></td>
+        <td><%= project.country %></td>
+        <td><%= project.region %></td>
+        <td>
+          <% if !Sector.find_by_id(project.sector_id).nil? %>
+            <%= Sector.find_by_id(project.sector_id).name %></td>
+          <% else %>
+            <%= 'Sin sector' %>
+          <% end %>
+        <td><%= 'US$ ' + project.investment.to_s + ' Millones' %></td>
+        <td><%= project.production %></td>
+        <!-- <td><%= project.unit_production %></td> -->
+        <td><%= project.current_phase %></td>
+        <td><%= project.responsible %></td>
+        <td><%= project.contract_type %></td>
+        <td><%= project.contact_name %></td>
+        <td><%= project.contact_company %></td>
+        <td><%= project.contact_job %></td>
+        <td><%= project.contact_phone %></td>
+        <td><%= project.contact_address %></td>
+        <td><%= project.created_at.strftime("%d %b, %Y")  %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      admin_project_path(project), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_project_path(project), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admin_project_path(project),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_project_path,
+            :class => 'btn btn-primary' %>

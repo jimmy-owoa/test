@@ -1,0 +1,2 @@
+module Reporter::ApplicationControllerHelper
+end

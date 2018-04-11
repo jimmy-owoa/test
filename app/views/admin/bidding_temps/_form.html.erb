@@ -1,0 +1,97 @@
+<%= form_for [:admin, @bidding_temp], :html => { :class => "form-horizontal bidding_temp" } do |f| %>
+
+  <% if @bidding_temp.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@bidding_temp.errors.count, "error") %> prohibited this bidding_temp from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @bidding_temp.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :country, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:country) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sector, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :sector, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sector) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :items_involved, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :items_involved, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:items_involved) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :location, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:location) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bidding_company, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :bidding_company, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:bidding_company) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :description, :class => 'form-control', size: "20x5" %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :requirements, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :requirements, :class => 'form-control', size: "20x8" %>
+    </div>
+    <%=f.error_span(:requirements) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bases, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :bases, :class => 'form-control', size: "20x8" %>
+    </div>
+    <%=f.error_span(:bases) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :contact, :class => 'form-control', size: "20x3" %>
+    </div>
+    <%=f.error_span(:contact) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_bidding_temps_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

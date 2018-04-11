@@ -1,0 +1,153 @@
+<%- model_class = ProjectTemp -%>
+
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<!-- <%= form_tag admin_project_temps_path, method: :get do %>
+      <input name="search" type="text" placeholder="Busque aquí...">
+      <button type="submit">Buscar</button>
+<% end %> -->
+<%= form_tag admin_project_temps_path, method: :get do %>
+  <%= 'Sector' %>
+  <%= select_tag :sector_name, options_for_select(['*','Mineria', 'Energia', 'Industrial', 'Forestal', 'Infraestructura', 'Sanitario']) %>
+  <%= 'Pais' %>
+  <%= select_tag :country, options_for_select(['*',["Chile"], 'Bolivia', 'Peru', 'Guatemala', 'Argentina', 'Ecuador', 'Panamá','Colombia','Uruguay','República Dominicana',
+    'México','Venezuela']) %>
+  <%= 'Region' %>
+  <%= select_tag :region, options_for_select(['*', ['I - Tarapacá', {class: "Chile"}], ['II - Antofagasta', {class: "Chile"}], ['III - Atacama', {class: "Chile"}], ['IV - Coquimbo', {class: "Chile"}], ['V - Valparaíso', {class: "Chile"}],
+    ['VI - Libertador General Bernardo O´Higgins', {class: "Chile"}], ['VII - Maule', {class: "Chile"}],
+    ['VIII - Bío-Bío', {class: "Chile"}],['IX - Araucanía', {class: "Chile"}], ['X - Los Lagos', {class: "Chile"}], ['XI - Aysén del General Carlos Ibánez del Campo', {class: "Chile"}],
+    ['XII - Magallanes y de la Antártica Chilena', {class: "Chile"}], ['Región Metropolitana', {class: "Chile"}],['XIV - Los Rios', {class: "Chile"}], ['XV - Arica y Parinacota', {class: "Chile"}],
+    ['Amazonas', {class: "Peru"}], ['Áncash', {class: "Peru"}], ['Apurímac', {class: "Peru"}], ['Arequipa', {class: "Peru"}], ['Ayacucho', {class: "Peru"}], ['Cajamarca', {class: "Peru"}],
+    ['Callao33​', {class: "Peru"}], ['Cusco', {class: "Peru"}],['Huancavelica', {class: "Peru"}], ['Huánuco', {class: "Peru"}], ['Ica', {class: "Peru"}], ['Junín', {class: "Peru"}],
+    ['La Libertad', {class: "Peru"}], ['Lambayeque', {class: "Peru"}], ['Lima Metropolitana', {class: "Peru"}], ['Lima (departamento)', {class: "Peru"}], ['Loreto', {class: "Peru"}],
+    ['Madre de Dios', {class: "Peru"}], ['Moquegua', {class: "Peru"}], ['Pasco', {class: "Peru"}], ['Piura', {class: "Peru"}], ['Puno', {class: "Peru"}],
+    ['San Martín', {class: "Peru"}], ['Tacna', {class: "Peru"}], ['Tumbes', {class: "Peru"}], ['Ucayali', {class: "Peru"}], ['Buenos Aires', {class: "Argentina"}],
+    ['Catamarca', {class: "Argentina"}], ['Chaco', {class: "Argentina"}], ['Chubut', {class: "Argentina"}], ['Córdoba', {class: "Argentina"}], ['Corrientes', {class: "Argentina"}],
+    ['Entre Ríos', {class: "Argentina"}], ['Formosa', {class: "Argentina"}], ['Jujuy', {class: "Argentina"}], ['La Pampa', {class: "Argentina"}], ['La Rioja', {class: "Argentina"}],
+    [ 'Mendoza', {class: "Argentina"}], ['Misiones', {class: "Argentina"}], ['Neuquén', {class: "Argentina"}], ['Río Negro', {class: "Argentina"}], ['Salta', {class: "Argentina"}],
+    ['San Juan', {class: "Argentina"}], ['San Luis', {class: "Argentina"}], ['Santa Cruz', {class: "Argentina"}], ['Santa Fe', {class: "Argentina"}], ['Santiago del Estero', {class: "Argentina"}],
+    ['Tierra del Fuego', {class: "Argentina"}], ['Antártida e Islas del Atlántico Sur', {class: "Argentina"}], ['Tucumán', {class: "Argentina"}]]) %>
+
+  <%= submit_tag "Buscar", name: nil %>
+<% end %>
+  <button> <%= link_to "Mostrar todos",admin_project_temps_path %> </button>
+
+
+
+
+  <select id="region" name="region">
+  <option value="0">Select Street</option>
+  <option value="1">Street 1</option>
+  <option value="1">Street 2</option>
+  <option value="1">Street 3</option>
+  <option value="2">Street 4</option>
+  <option value="2">Street 5</option>
+  <option value="2">Street 6</option>
+  <option value="1200">Street 7</option>
+  <option value="1200">Street 8</option>
+  <option value="1200">Street 9</option>
+  </select>
+
+
+
+
+  <!-- <body ng-app="">
+
+  <%= form_tag admin_project_temps_path, method: :get do %>
+  <%= 'Sector' %>
+  <%= select_tag :sector_name, options_for_select(['*','Mineria', 'Energia', 'Industrial', 'Forestal', 'Infraestructura', 'Sanitario']) %>
+    Pais:
+  <%= select_tag :country, options_for_select(['','Chile', 'Bolivia', 'Peru', 'Guatemala', 'Argentina', 'Ecuador', 'Panamá','Colombia','Uruguay','República Dominicana',
+      'México','Venezuela']), :ng => {:model => "pais"} %>
+    <%= submit_tag "Buscar", name: nil %>
+  <% end %>
+
+  <div ng-switch="pais">
+      <div ng-switch-when="Chile">
+        <%= "Chile" %>
+        <%= select_tag :region, options_for_select(['*', 'I - Tarapacá', 'II - Antofagasta', 'III - Atacama', 'IV - Coquimbo', 'V - Valparaíso', 'VI - Libertador General Bernardo O´Higgins', 'VII - Maule',
+          'VIII - Bío-Bío','IX - Araucanía', 'X - Los Lagos', 'XI - Aysén del General Carlos Ibánez del Campo', 'XII - Magallanes y de la Antártica Chilena',
+          'Región Metropolitana','XIV - Los Rios', 'XV - Arica y Parinacota']) %>
+      </div>
+      <div ng-switch-when="Peru">
+        <%= "Perú" %>
+        <%= select_tag :region, options_for_select(['*', 'Amazonas', 'Áncash', 'Apurímac', 'Arequipa', 'Ayacucho', 'Cajamarca', 'Callao33​',
+          'Cusco','Huancavelica', 'Huánuco', 'Ica', 'Junín',
+          'La Libertad','Lambayeque', 'Lima Metropolitana', 'Lima (departamento)', 'Loreto', 'Madre de Dios', 'Moquegua',
+          'Pasco', 'Piura', 'Puno', 'San Martín', 'Tacna', 'Tumbes', 'Ucayali']) %>
+      </div>
+      <div ng-switch-when="Argentina">
+        <%= "Argentina" %>
+        <%= select_tag :region, options_for_select(['Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos',
+          'Formosa','Jujuy', 'La Pampa', 'La Rioja', 'Mendoza',
+          'Misiones','Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis', 'Santa Cruz',
+          'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego, Antártida e Islas del Atlántico Sur', 'Tucumán']) %>
+      </div>
+  </div>
+  </div> -->
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:Numero) %></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:region) %></th>
+      <th><%= model_class.human_attribute_name(:owner) %></th>
+      <th><%= model_class.human_attribute_name(:sector_name) %></th>
+      <th><%= model_class.human_attribute_name(:updated_at) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <% i = 0 %>
+  <tbody>
+    <% @found_sector.each do |project_temp| %>
+      <% i = i +1 %>
+      <tr>
+        <td><%= i %>
+        <td><%= link_to project_temp.id, admin_project_temp_path(project_temp) %></td>
+        <td><%= project_temp.title %></td>
+        <td><%= project_temp.country %></td>
+        <td><%= project_temp.region %></td>
+        <td><%= project_temp.owner %></td>
+        <td><%= project_temp.sector_name %></td>
+        <td><%=l project_temp.updated_at %></td>
+        <% if project_temp.updated_at >= "Wed, 24 Jan 2018 00:13:25 +0000" %>
+          <td><button type="button" class="btn btn-success">Listo</button></td>
+        <% else %>
+          <td><button type="button" class="btn btn-danger">No Listo</button></td>
+
+        <% end %>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      admin_project_temp_path(project_temp), :class => 'btn btn-info btn-xs' %>
+          <%= link_to t('.edit', :default => t("helper s.links.edit")),
+                      edit_admin_project_temp_path(project_temp), :class => 'btn btn-primary btn-xs' %>
+          <!-- <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admin_project_temp_path(project_temp),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %> -->
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<ul class="" align="center">
+    <%= will_paginate @project_temps %>
+</ul>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_project_temp_path,
+            :class => 'btn btn-primary' %>
+<script>
+  $('#country').change(function(){
+      $('#region option').hide();
+      $('#region option[class="'+$(this).val()+'"]').show()
+      console.log($(this).val())
+
+   });
+</script>

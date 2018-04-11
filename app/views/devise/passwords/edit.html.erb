@@ -1,0 +1,84 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/css/forgotstyle.css">
+</head>
+<div class="wrapper">
+  <div class="main-panel">
+    <div class="main-content">
+      <div class="content-wrapper">
+            <section id="forgot-password">
+            <div class="container-fluid">
+                <div class="row full-height-vh">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="card bg-blue-grey bg-darken-3 px-4">
+                            <div class="card-header">
+                                <div class="card-image text-center">
+                                    <i class="fa fa-user font-large-5 blue-grey lighten-4"></i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-block">
+                                    <div class="text-center white">
+                                        <h4 class="text-uppercase text-bold-400">Cambio de contraseña</h4>
+                                    </div>
+                                    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                                      <%= devise_error_messages! %>
+                                      <%= f.hidden_field :reset_password_token %>
+                                        <div class="form-group">
+                                          <% if @minimum_password_length %>
+                                            <em>(<%= @minimum_password_length %> caracteres mínimos)</em><br />
+                                          <% end %>
+                                          <%= f.password_field :password, autofocus: true, autocomplete: "off", class:'form-control', placeholder:'Ingresa tu nueva contraseña' %>
+                                        </div>
+                                        <div class="form-group">
+                                          <%= f.password_field :password_confirmation, autocomplete: "off", class:'form-control', placeholder:'Confirma tu nueva contraseña' %>
+                                        </div>
+                                        <div class="form-group pt-2">
+                                            <div class="text-center mt-1">
+                                              <%= f.submit "Cambiar mi contraseña", class:'btn btn-info btn-raised btn-block' %>
+                                            </div>
+                                            <p class="white">No te preocupes, no compartiremos tus datos.</p>
+                                        </div>
+                                    <% end %>
+                                </div>
+                                <div class="card-footer bg-blue-grey bg-darken-3">
+                                  <div class="float-left"><%= link_to 'Iniciar sesión', root_path, class:'white' %></div>
+                                  <div class="float-right"><%= link_to 'Registrarse', new_request_path, class:'white' %></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<h2>Cambio de contraseña</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="field">
+    <%= f.label :password, "Nueva contraseña" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> caracteres mínimos)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmar nueva contraseña" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Cambiar mi contraseña" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

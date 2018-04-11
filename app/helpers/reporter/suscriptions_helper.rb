@@ -1,0 +1,2 @@
+module Reporter::SuscriptionsHelper
+end

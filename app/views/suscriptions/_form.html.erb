@@ -1,0 +1,68 @@
+
+
+<%= form_for @suscription, :html => { :class => "form-horizontal suscription" } do |f| %>
+
+  <% if @suscription.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@suscription.errors.count, "error") %> prohibited this suscription from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @suscription.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+
+    <%=f.label :nombre_y_apellido, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :region, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :city, options_for_select(["Región metropolitana", "Región de Arica y parinacota", "Región de tarapacá",
+        "Región de Antofagasta", "Región de Atacama", "Región de Coquimbo", "Región de Valparaiso", "Región del Libertador Bernardo O'higgins",
+        "Región del Maule", "Región del Bio Bio", "Región de La Araucania", "Región de Los Rios", "Región de Los Lagos", "Región de Aisén",
+        "Región de Magallanes" ]), :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:city) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :empresa, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :business, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:business) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cargo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :job, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:job) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                root_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

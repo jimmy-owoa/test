@@ -1,0 +1,60 @@
+<%- model_class = Bidding -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:publication_title) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:sector) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:business_id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:contact_name) %></th>
+      <th><%= model_class.human_attribute_name(:contact_job) %></th>
+      <th><%= model_class.human_attribute_name(:contact_email) %></th>
+      <th><%= model_class.human_attribute_name(:contact_phone) %></th>
+      <th><%= model_class.human_attribute_name(:contact_address) %></th>
+      <th><%= model_class.human_attribute_name(:other) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @biddings.each do |bidding| %>
+      <tr>
+        <td><%= link_to bidding.id, admin_bidding_path(bidding) %></td>
+        <td><%= bidding.publication_title %></td>
+        <td><%= bidding.country %></td>
+        <td><%= bidding.sector %></td>
+        <td><%= bidding.location %></td>
+        <td><%= bidding.business_id %></td>
+        <td><%= bidding.description %></td>
+        <td><%= bidding.contact_name %></td>
+        <td><%= bidding.contact_job %></td>
+        <td><%= bidding.contact_email %></td>
+        <td><%= bidding.contact_phone %></td>
+        <td><%= bidding.contact_address %></td>
+        <td><%= bidding.other %></td>
+        <td><%=l bidding.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      admin_bidding_path(bidding), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_bidding_path(bidding), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admin_bidding_path(bidding),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_bidding_path,
+            :class => 'btn btn-primary' %>

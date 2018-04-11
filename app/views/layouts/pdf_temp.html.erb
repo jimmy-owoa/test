@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PDF</title>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+  <!-- <img src="http://agendaempresaria.com/assets/images/logo3.png" height="80"> -->
+  <div class='container'>
+    <h2 align="center"><%= @project_temp.title %></h2><br><hr>
+    <h4> General </h4><hr>
+    <strong>Titulo detalle: </strong>
+    <p><%= @project_temp.detail_title %></p>
+    <strong>Pais:</strong>
+    <p><%= @project_temp.country %></p>
+    <strong>Region:</strong>
+    <p><%= @project_temp.region %></p>
+    <strong>Sector:</strong>
+    <p>  <%=@project_temp.sector_name %></p>
+    <strong>Tipos:</strong>
+    <p><%= @project_temp.types %></p>
+    <strong>Inversion:</strong>
+    <p><%= @project_temp.investment %></p>
+    <strong>Produccion:</strong>
+    <p><%= @project_temp.production %></p>
+
+    <hr>
+    <h4> Cliente </h4><hr>
+    <strong>Cliente:</strong>
+    <p><%= @project_temp.client %></p>
+    <strong>Mandante:</strong>
+    <p><%= @project_temp.owner %></p>
+    <strong>Direccion:</strong>
+    <p><%= @project_temp.location %></p>
+
+    <hr>
+    <h4> Contacto </h4><hr>
+    <strong>Nombre contacto:</strong>
+    <p><%= @project_temp.contact_name %></p>
+    <strong>Empresa contacto:</strong>
+    <p><%= @project_temp.contact_company %></p>
+    <strong>Puesto del contacto:</strong>
+    <p><%= @project_temp.contact_job %></p>
+    <strong>Telefono contacto:</strong>
+    <p><%= @project_temp.contact_phone %></p>
+    <strong>Direccion contacto:</strong>
+    <p><%= @project_temp.contact_address %></p>
+    <strong>Contacto completo:</strong>
+    <p><%= 'Nombre contacto: '+ @project_temp.contact_name + ' Empresa contacto: '+ @project_temp.contact_company + ' Cargo contacto: '+ @project_temp.contact_job +
+      ' Teléfono: ' + @project_temp.contact_phone + ' Dirección: ' + @project_temp.contact_address %></p>
+    <strong>Adjudicaciones:</strong>
+    <p><%= @project_temp.adjudications %></p>
+
+    <hr>
+    <h4> Descripción </h4><hr>
+    <strong>Descripcion:</strong>
+    <p><%= @project_temp.description %></p>
+    <strong>Fase actual:</strong>
+    <p><%= @project_temp.current_phase%></p>
+    <strong>Responsable:</strong>
+    <p><%= @project_temp.responsible %></p>
+    <strong>Tipo de contrato:</strong>
+    <p><%= @project_temp.contract_type %></p>
+    <strong>Ultima informacion:</strong>
+    <p><%= @project_temp.latest_information %></p>
+
+    <hr>
+    <h4> Categoría </h4><hr>
+    <strong>Obras principales:</strong>
+    <p><%= @project_temp.main_works %></p>
+    <strong>Equipos principales:</strong>
+    <p><%= @project_temp.main_teams %></p>
+    <strong>Suministros principales:</strong>
+    <p><%= @project_temp.main_supplies %></p>
+    <strong>Servicios principales:</strong>
+    <p><%= @project_temp.main_services %></p>
+
+    <hr>
+    <h4> Historial </h4><hr>
+    <strong>Historial:</strong>
+    <p><%= @project_temp.history %><p>
+
+
+  </div>
+</body>
+</html>

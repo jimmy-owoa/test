@@ -1,0 +1,20 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navmenu-mobile {
+  position: absolute;
+  right: 80px;
+  top: 15px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .logo-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+  }
+}

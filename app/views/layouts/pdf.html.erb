@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PDF</title>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+  <!-- <img src="http://agendaempresaria.com/assets/images/logo3.png" height="80"> -->
+  <div class='container'>
+    <h2 align="center"><%= @project.title %></h2><br><hr>
+    <h4> General </h4><hr>
+    <strong>Titulo detalle: </strong>
+    <p><%= @project.detail_title %></p>
+    <strong>Pais:</strong>
+    <p><%= @project.country %></p>
+    <strong>Region:</strong>
+    <p><%= @project.region %></p>
+    <strong>Sector:</strong>
+    <p>  <% if !Sector.find_by_id(@project.sector_id).nil? %>
+        <%= Sector.find_by_id(@project.sector_id).name %>
+      <% else %>
+        <%= 'Sin sector' %>
+      <% end %></p>
+    <strong>Tipos:</strong>
+    <p><% @project.project_types.each do |ps| %>
+          <%= ps.name %>
+        <% end %></p>
+    <strong>Inversion:</strong>
+    <p><%= @project.investment %></p>
+    <strong>Produccion:</strong>
+    <p><%= @project.production %></p>
+
+    <hr>
+    <h4> Cliente </h4><hr>
+    <strong>Cliente:</strong>
+    <p><%= @project.client %></p>
+    <strong>Mandante:</strong>
+    <p><%= @project.owner %></p>
+    <strong>Direccion:</strong>
+    <p><%= @project.location %></p>
+
+    <hr>
+    <h4> Contacto </h4><hr>
+    <strong>Nombre contacto:</strong>
+    <p><%= @project.contact_name %></p>
+    <strong>Empresa contacto:</strong>
+    <p><%= @project.contact_company %></p>
+    <strong>Puesto del contacto:</strong>
+    <p><%= @project.contact_job %></p>
+    <strong>Telefono contacto:</strong>
+    <p><%= @project.contact_phone %></p>
+    <strong>Direccion contacto:</strong>
+    <p><%= @project.contact_address %></p>
+    <strong>Contacto completo:</strong>
+    <p><%= 'Nombre contacto: '+ @project.contact_name + ' Empresa contacto: '+ @project.contact_company + ' Cargo contacto: '+ @project.contact_job +
+      ' Teléfono: ' + @project.contact_phone + ' Dirección: ' + @project.contact_address %></p>
+    <strong>Adjudicaciones:</strong>
+    <p><%= @project.adjudications %></p>
+
+    <hr>
+    <h4> Descripción </h4><hr>
+    <strong>Descripcion:</strong>
+    <p><%= @project.description %></p>
+    <strong>Fase actual:</strong>
+    <p><%= @project.current_phase%></p>
+    <strong>Responsable:</strong>
+    <p><%= @project.responsible %></p>
+    <strong>Tipo de contrato:</strong>
+    <p><%= @project.contract_type %></p>
+    <strong>Ultima informacion:</strong>
+    <p><%= @project.latest_information %></p>
+
+    <hr>
+    <h4> Categoría </h4><hr>
+    <strong>Obras principales:</strong>
+    <p><%= @project.main_works %></p>
+    <strong>Equipos principales:</strong>
+    <p><%= @project.main_teams %></p>
+    <strong>Suministros principales:</strong>
+    <p><%= @project.main_supplies %></p>
+    <strong>Servicios principales:</strong>
+    <p><%= @project.main_services %></p>
+
+    <hr>
+    <h4> Historial </h4><hr>
+    <strong>Historial:</strong>
+    <p><%= @project.history %><p>
+
+
+  </div>
+</body>
+</html>

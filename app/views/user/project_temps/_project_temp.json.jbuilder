@@ -1,0 +1,2 @@
+json.extract! project_temp, :id, :title, :detail_title, :country, :region, :sector_name, :types, :investment, :production, :client, :owner, :location, :description, :current_phase, :responsible, :contract_type, :latest_information, :contact_name, :contact_company, :contact_job, :contact_phone, :contact_address, :full_contact, :adjudications, :history, :main_works, :main_teams, :main_supplies, :main_services, :created_at, :updated_at
+json.url project_temp_url(project_temp, format: :json)

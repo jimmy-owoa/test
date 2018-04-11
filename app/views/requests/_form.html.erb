@@ -1,0 +1,152 @@
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="mbr-section mbr-section-nopadding mbr-price-table">
+              <div class="row">
+                <div class="col-xs-12 col-md-6 col-xl-6">
+                    <div class="mbr-plan card text-xs-center">
+                        <div class="mbr-plan-header card-block">
+
+                          <div class="card-title">
+                            <h3 class="mbr-plan-title">STANDARD</h3>
+                            <small class="mbr-plan-subtitle">Descripción</small>
+                          </div>
+                          <div class="card-text">
+                              <small class="mbr-plan-price-desc">Acceso a la mayor parte de la información.</small><hr>
+                          </div>
+                        </div>
+                        <div class="mbr-plan-body card-block">
+                            <div class="mbr-plan-list">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 32 GB storage</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Unlimited users</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 15 GB bandwidth</li>
+                                    <li class="list-group-item"> 32 GB storage</li>
+                                    <li class="list-group-item"> Unlimited users</li>
+                                    <li class="list-group-item"> 15 GB bandwidth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-xl-6">
+                    <div class="mbr-plan card text-xs-center">
+                        <div class="mbr-plan-header card-block">
+                          <div class="card-title">
+                            <h3 class="mbr-plan-title">BUSINESS</h3>
+                            <small class="mbr-plan-subtitle">Descripción</small>
+                          </div>
+                          <div class="card-text">
+                              <small class="mbr-plan-price-desc">Contenido exclusivo y bla bla bla. Descripción</small><hr>
+                          </div>
+                        </div>
+                        <div class="mbr-plan-body card-block">
+                            <div class="mbr-plan-list">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 32 GB storage</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Unlimited users</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 15 GB bandwidth</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 32 GB storage</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Unlimited users</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 15 GB bandwidth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-container-register">
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+                <h3 align="center"><%= "Registro de usuario" %> </h3>
+                <img id="profile-img" class="profile-img-card" src="/assets/images/logo.png" />
+
+                <p id="profile-name" class="profile-name-card"></p>
+                    <%= form_for @request, :html => { :class => "form-horizontal request" } do |f| %>
+                      <% if @request.errors.any? %>
+                        <div id="error_expl" class="panel panel-danger">
+                          <div class="panel-heading">
+                            <h5 class="panel-title"><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h5>
+                          </div>
+                          <div class="panel-body">
+                            <ul>
+                            <% @request.errors.full_messages.each do |msg| %>
+                              <li><%= msg %></li>
+                            <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                      <% end %>
+
+                      <div class="form-group">
+                        <%= f.label :empresa , :class => 'control-label col-lg-4' %>
+                        <div class="col-lg-10">
+                          <%= f.text_field :business, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:business) %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :ciudad, :class => 'control-label col-lg-4' %>
+                        <div class="col-lg-10">
+                          <%= f.text_field :city, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:city) %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :direccion, :class => 'control-label col-lg-4' %>
+                        <div class="col-lg-10">
+                          <%= f.text_field :address, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:address) %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :persona_de_contacto, :class => 'control-label col-lg-7' %>
+                        <div class="col-lg-10">
+                          <%= f.text_field :contact_person, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:contact_person) %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :telefono, :class => 'control-label col-lg-4' %>
+                        <div class="col-lg-10">
+                          <%= f.number_field :phone, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:telefono) %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :email, :class => 'control-label col-lg-4' %>
+                        <div class="col-lg-10">
+                          <%= f.email_field :email, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:email) %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :comentarios, :class => 'control-label col-lg-4' %>
+                        <div class="col-lg-10">
+                          <%= f.text_field :comment, :class => 'form-control' %>
+                        </div>
+                        <%=f.error_span(:comment) %>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                          <%= f.submit "Generar solicitud de registro", :class => 'btn btn-primary' %>
+                          <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
+                                    root_path, :class => 'btn btn-default' %>
+                        </div>
+                      </div>
+
+                    <% end %>
+
+
+
+            </div><!-- /card-container -->
+        </div>
+
+    </div>
+</div><!-- /container -->

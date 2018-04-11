@@ -1,0 +1,2 @@
+module Reporter::ApplicationHelper
+end

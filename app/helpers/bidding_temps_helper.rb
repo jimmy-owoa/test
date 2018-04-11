@@ -1,0 +1,2 @@
+module BiddingTempsHelper
+end

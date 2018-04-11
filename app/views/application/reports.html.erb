@@ -1,0 +1,12 @@
+Esto es noticias
+<div class="tab-content">
+  <!-- grid-view -->
+  <div role="tabpanel" class="tab-pane active" id="grid-view">
+    <% @reports.sort_by{|t| - t.created_at.to_i}.each do |report| %>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <%=link_to (image_tag report.image.url(:medium)), reporter_report_path(report) %>
+        <h2> Noticia: <%= report.title %> </h2>
+        <%= report.description %>
+      </div>
+    <% end %>
+  </div>

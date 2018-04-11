@@ -1,0 +1,94 @@
+<%- model_class = ProjectTemp -%>
+
+<div class="container table-section">
+  <h2><i class="fa fa-cogs fa-btn"></i> <%= @bidding_temp.title %></h2><hr>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+          <strong>Nombre: </strong>
+          <p><%= @bidding_temp.title %></p>
+          <strong>Pais:</strong>
+          <p><%= @bidding_temp.country %></p>
+          <strong>Sector:</strong>
+          <p><%= @bidding_temp.sector %></p>
+          <strong>Dirección:</strong>
+          <p><%= @bidding_temp.location %></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+
+          <strong>Descripción:</strong>
+          <p><%= @bidding_temp.description %></p>
+          <strong>Rubros que intervienen:</strong>
+          <p><%= @bidding_temp.items_involved %></p>
+          <strong>Direccion:</strong>
+          <p><%= @bidding_temp.location %></p>
+
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+
+          <strong>Empresa licitadora:</strong>
+          <p><%= @bidding_temp.bidding_company%></p>
+          <strong>Bases:</strong>
+          <p><%= @bidding_temp.bases %></p>
+          <strong>Contacto:</strong>
+          <p><%= @bidding_temp.contact %></p>
+          <strong>Direccion contacto:</strong>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+
+            <strong>Requerimientos:</strong>
+            <p><%= @bidding_temp.requirements %></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card card-outline-secondary mb-3 text-center">
+        <div class="card-block card-projects">
+          <blockquote class="card-blockquote">
+
+              <strong>Obras principales:</strong>
+          <p>* Construcción de Accesos y Caminos * Movimiento de Tierra * Instalación de Faenas * Construcción Botadero de Escoria.</p>
+          <strong>Equipos principales:</strong>
+          <p>- Bulldozer - Cargador Frontal - Retroexcavadora - Motoniveladora - Camión Aljibe - Excavadora - Grupo Electrógeno - Camiones - Ollas - Tractor</p>
+          <strong>Suministros principales:</strong>
+          <p>- Combustible - Agua - Energía Electrica - Asfalto - Hormigón - Ripio - Neumáticos </p>
+          <strong>Servicios principales:</strong>
+          <p>* Construcción * Obras de infraestructura * Caminos * Movimiento de Tierra * Servicios generales * Suministro de utilities * Agua y Alcantarillado * Energía Eléctrica</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              user_bidding_temps_path, :class => 'btn btn-default'  %>
+
+</div>

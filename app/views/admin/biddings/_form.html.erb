@@ -1,0 +1,121 @@
+<%= form_for [:admin, @bidding], :html => { :class => "form-horizontal bidding" } do |f| %>
+
+  <% if @bidding.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@bidding.errors.count, "error") %> prohibited this bidding from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @bidding.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :publication_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :publication_title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:publication_title) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :country, options_for_select(Country.all.map{|i| [i.name, i.id]}), :class => 'form-control', multiple: true %>
+    </div>
+    <%=f.error_span(:country) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sector, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :sector, options_for_select(Sector.all.map{|i| [i.name, i.id]}), :class => 'form-control', multiple: true %>
+    </div>
+    <%=f.error_span(:sector) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :location, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:location) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :business_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :business_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:business_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_job, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_job, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_job) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_phone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_phone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_phone) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_address, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contact_address, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contact_address) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :other, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :other, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:other) %>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_biddings_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
