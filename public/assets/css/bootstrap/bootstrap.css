@@ -487,6 +487,27 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
+/*Testing text color for datatable*/
+  .negative {
+  color:rgba(255,0,0,1.00);
+  }
+  .positive {
+  color:rgba(0,255,0,1.00);
+  }
+  .warning {
+    background-color: #F99 !important;
+}
+.data-table-container {
+  padding: 10px;
+}
+
+.dt-buttons .btn {
+  margin-right: 3px;
+}
+
+
+  /*end testing*/
+
 .container {
   margin-right: auto;
   margin-left: auto;

@@ -35,7 +35,6 @@ class User::ProjectTempsController < User::ApplicationController
 
    end
   end
-
   end
 
   # GET /project_temps/new

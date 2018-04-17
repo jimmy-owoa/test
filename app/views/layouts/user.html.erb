@@ -59,7 +59,7 @@
 
 
 
-        <div class="container">
+        <div class="">
 
 
               <%= yield %>
@@ -98,9 +98,49 @@
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
 
+
   <script>
-    $(document).ready(function() {
-        $('#ProjectTable').DataTable();
-    } );
+  var oTable = $('table.data-table').DataTable({
+    rowCallback: function(row, data, index){
+      if(data[2] == 'Vigente'){
+        $(row).find('td:eq(1)').css('color', 'green');
+      }
+      if(data[2] == 'Inactiva'){
+        $(row).find('td:eq(1)').css('color', 'red');
+      }
+    },
+    "columnDefs": [{ "width": "20%", "targets": 0 }]
+  });
+
+
+
+  $('table.data-table tfoot th').each( function () {
+      var title = $(this).text();
+      if (title !== 'Estado' && title !=='Acción'){
+          $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
+      }
+  } );
+
+  // DataTable
+  var table = $('table.data-table').DataTable();
+
+  // Apply the search
+  table.columns().every( function () {
+      var that = this;
+
+      $( 'input', this.footer() ).on( 'keyup change', function () {
+          if ( that.search() !== this.value ) {
+              that
+                  .search( this.value )
+                  .draw();
+          }
+      } );
+  } );
   </script>
+
+  <!-- <script>
+    $(document).ready(function() {
+        $('#ProveedorsTable').DataTable();
+    } );
+  </script> -->
 </html>

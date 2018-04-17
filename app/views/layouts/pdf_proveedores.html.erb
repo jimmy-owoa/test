@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PDF</title>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+  <div class='container'>
+
+    <!-- Hoja 1 -->
+    <img src="http://agendaempresaria.com/assets/images/logo3.png" height="80">
+    <h2 align="center"><%= 'Resumen ' + @proveedor.razon_social%></h2><br><hr>
+    <h3> Competencias básicas </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Situacion competencias básicas:</th>
+          <td><%= @proveedor.situacion_competencias_basicas%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Categoría:</th>
+          <td><%= @proveedor.competencias_basicas_categoria %></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Porcentaje:</th>
+          <td><%= @proveedor.competencias_basicas_porcentaje%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Fecha vigencia:</th>
+          <td><%= @proveedor.competencias_basicas_fecha_vigencia%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Infraestructura:</th>
+          <td><%= @proveedor.competencias_basicas_infraestructura%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Recursos humanos:</th>
+          <td><%= @proveedor.comptencias_basicas_recursos_humanos%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Calidad</th>
+          <td><%= @proveedor.competencias_basicas_calidad%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Medio ambiente:</th>
+          <td><%= @proveedor.competencias_basicas_medio_ambiente%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Conectividad y automatización:</th>
+          <td><%= @proveedor.competencias_basicas_conectividad_y_automatizacion%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Comunidad:</th>
+          <td><%= @proveedor.competencias_basicas_comunidad%></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Hoja 2 -->
+    <img src="http://agendaempresaria.com/assets/images/logo3.png" height="80"><hr>
+    <h3> Financiero </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Año:</th>
+          <td><%= @proveedor.financiero_anio%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Tamaño:</th>
+          <td><%= @proveedor.financiero_tamano%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Patrimonio (US$):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_patrimonio.to_i)%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Capital de trabajo (US$):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_capital_de_trabajo.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Total activos (M$):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_total_activos.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Total deuda (M$):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_deuda.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Capital de trabajo relativo (%):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_capital_de_trabajo_relativo.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Liquidez (veces):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_liquidez.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Razón de endeudamiento (US$):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_razon_de_endeudamiento.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Leverage (%):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_leverage.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Rentabilidad Activos (%):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_rentabilidad_activos.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Rentabilidad Patrimonio (%):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_rentabilidad_patrimonio.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Rentabilidad Ventas (%):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_rentabilidad_ventas.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Indice de quiebra (Decimal):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_indice_de_quiebra.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Ingreso de explotación (M$):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_ingreso_de_explotacion.to_i)%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Razón ácida (veces):</th>
+          <td><%= number_with_delimiter(@proveedor.financiero_razon_acida.to_i)%></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Hoja 3 -->
+    <img src="http://agendaempresaria.com/assets/images/logo3.png" height="80"><hr>
+    <h3> Antecedentes comerciales </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Cantidad Documentos Boletín:</th>
+          <td><%= @proveedor.antecedente_comercial_cantidad_documentos_boletin%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Monto Total Boletín Laboral ($):</th>
+          <td><%= @proveedor.antecedente_comercial_monto_total_boletin%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Cantidad Documentos Morosidad:</th>
+          <td><%=@proveedor.antecedente_comercial_cantidad_documentos_morosidad%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Monto Total Morosidad ($):</th>
+          <td><%= @proveedor.antecedente_comercial_monto_total_morosidad%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Cantidad Documentos Protesto:</th>
+          <td><%= @proveedor.antecedente_comercial_cantidad_documentos_protestos %></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Monto Total Protesto:</th>
+          <td><%= @proveedor.antecedente_comercial_monto_total_protesto%></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <hr>
+    <h3> Tributario </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Fecha Actualización:</th>
+          <td><%= @proveedor.tributario_fecha_de_actualizacion %><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Facturación Electrónica:</th>
+          <td><%= @proveedor.tributario_facturacion_electronica%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Observación Irregularidad:</th>
+          <td><%=@proveedor.tributario_observacion_irregularidad%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Observación de Alerta:</th>
+          <td><%= @proveedor.tributario_observacion_alerta%></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <hr>
+    <h3> Mutualidad </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Fecha:</th>
+          <td><%= @proveedor.mutualidad_fecha %><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Índice de Gravedad:</th>
+          <td><%= @proveedor.mutualidad_indice_gravedad%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Índice de Frecuencia:</th>
+          <td><%=@proveedor.mutualidad_indice_de_frecuencia%><br></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Hoja 4 -->
+    <img src="http://agendaempresaria.com/assets/images/logo3.png" height="80"><hr>
+    <h3> Contacto </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Nombre:</th>
+          <td><%= @proveedor.contacto_nombre%><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Teléfono:</th>
+          <td><%= @proveedor.contacto_telefono%></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Email:</th>
+          <td><%=@proveedor.contacto_email%><br></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <hr>
+    <h3> Instalaciones </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Ciudad de la Casa Matriz:</th>
+          <td><%= @proveedor.instalaciones_ciudad_casa_matriz %><br></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Dirección de la Casa Matriz:</th>
+          <td><%= @proveedor.instalaciones_direccion_casa_matriz%></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <hr>
+    <h3> Certificaciones ISO </h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Tipo certificaciones ISO:</th>
+          <td><%= @proveedor.tipo_de_certificacion_iso %><br></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

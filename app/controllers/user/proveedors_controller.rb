@@ -10,6 +10,14 @@ class User::ProveedorsController < User::ApplicationController
   # GET /proveedors/1
   # GET /proveedors/1.json
   def show
+    respond_to do |format|
+     format.html
+     format.pdf do
+     render pdf: "Proveedor",
+     template: "user/proveedors/show.html.erb",
+     layout: 'pdf_proveedores.html'
+     end
+    end
   end
 
   # GET /proveedors/new
