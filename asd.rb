@@ -4,7 +4,7 @@ rails g scaffold Proveedor rut:string razon_social:string estado_general:string 
 
 
 require 'csv'
-CSV.foreach('proveedores.csv', headers: true) do |row|
+CSV.foreach('proveedores_v2.csv', headers: true) do |row|
     # Getting values from csv archive
     rut = row[0]
     razon_social = row[1]
@@ -57,6 +57,34 @@ CSV.foreach('proveedores.csv', headers: true) do |row|
     instalaciones_ciudad_casa_matriz = row[48]
     instalaciones_direccion_casa_matriz = row[49]
     tipo_de_certificacion_iso = row[50]
+    numero_registro = row[51]
+    alerta_actualizacion = row[52]
+    nivel_deuda = row[53]
+    infraccion_boletin_laboral = row[54]
+    tiene_documentos_morosos = row[55]
+    tiene_documentos_protestados = row[56]
+    alerta_sii = row[57]
+    alerta_desactualizacion_mutual = row[58]
+    es_extranjero = row[59]
+    iso_9000 = row[60]
+    iso_14000 = row[61]
+    iso_18000 = row[62]
+    penalizacion_liquidez = row[63]
+    penalizacion_test_acido = row[64]
+    penalizacion_endeudamiento = row[65]
+    penalizacion_nivel_deuda = row[66]
+    pena_morosidad = row[67]
+    pena_protestos = row[68]
+    pena_alerta_sii = row[69]
+    pena_iso_9000 = row[70]
+    pena_iso_18000 = row[71]
+    pena_boletin_laboral = row[72]
+    pena_indice_frecuencia = row[73]
+    scoring = row[74]
+    status_scoring = row[75]
+    meses_desactualizacion_mutual = row[76]
+    pena_indice_gravedad = row[77]
+
 
 
     Proveedor.create(rut: rut, razon_social: razon_social, estado_general: estado_general, observaciones: observaciones, observaciones_agenda: observaciones_agenda,
@@ -76,8 +104,27 @@ CSV.foreach('proveedores.csv', headers: true) do |row|
     tributario_observacion_irregularidad: tributario_observacion_irregularidad, mutualidad_fecha: mutualidad_fecha, mutualidad_indice_gravedad: mutualidad_indice_gravedad,
     mutualidad_indice_de_frecuencia: mutualidad_indice_de_frecuencia, contacto_nombre: contacto_nombre, contacto_telefono: contacto_telefono,
     contacto_email: contacto_email, instalaciones_ciudad_casa_matriz: instalaciones_ciudad_casa_matriz, instalaciones_direccion_casa_matriz: instalaciones_direccion_casa_matriz,
-    tipo_de_certificacion_iso: tipo_de_certificacion_iso)
+    tipo_de_certificacion_iso: tipo_de_certificacion_iso, numero_registro: numero_registro, alerta_actualizacion: alerta_actualizacion, nivel_deuda: nivel_deuda,
+    infraccion_boletin_laboral: infraccion_boletin_laboral, tiene_documentos_morosos: tiene_documentos_morosos, tiene_documentos_protestados: tiene_documentos_protestados,
+    alerta_sii: alerta_sii, alerta_desactualizacion_mutual: alerta_desactualizacion_mutual, iso_9000: iso_9000, iso_14000: iso_14000, iso_18000: iso_18000,
+    penalizacion_liquidez: penalizacion_liquidez, penalizacion_test_acido: penalizacion_test_acido, penalizacion_endeudamiento: penalizacion_endeudamiento,
+    penalizacion_nivel_deuda: penalizacion_nivel_deuda, pena_morosidad: pena_morosidad, pena_protestos: pena_protestos, pena_alerta_sii: pena_alerta_sii,
+    pena_iso_9000: pena_iso_9000, pena_boletin_laboral: pena_boletin_laboral, pena_indice_frecuencia: pena_indice_frecuencia, scoring: scoring, status_scoring: status_scoring,
+    meses_desactualizacion_mutual: meses_desactualizacion_mutual, pena_indice_gravedad: pena_indice_gravedad)
    end
+
+
+   rails g migration add_columns_to_proveedors numero_registro:string alerta_actualizacion:string nivel_deuda:decimal infraccion_boletin_laboral:string tiene_documentos_morosos:string tiene_documentos_protestados:string alerta_sii:string alerta_desactualizacion_mutual:string es_extranjero:string penalizacion_liquidez:integer penalizacion_test_acido:integer penalizacion_endeudamiento:integer penalizacion_nivel_deuda:integer pena_morosidad:integer pena_protestos:integer pena_alerta_sii:integer pena_iso_9000:integer pena_iso_18000:integer pena_boletin_laboral:integer pena_indice_frecuencia:integer scoring:integer status_scoring:string
+
+
+
+
+
+
+
+
+
+
 
    a = Project.all
    a.each do |x|

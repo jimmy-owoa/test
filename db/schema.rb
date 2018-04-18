@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411163454) do
+ActiveRecord::Schema.define(version: 20180418170020) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -221,7 +221,7 @@ ActiveRecord::Schema.define(version: 20180411163454) do
     t.integer "antecedente_comercial_cantidad_documentos_morosidad"
     t.integer "antecedente_comercial_monto_total_morosidad"
     t.integer "antecedente_comercial_cantidad_documentos_protestos"
-    t.integer "antecedente_comercial_monto_total_protesto"
+    t.bigint "antecedente_comercial_monto_total_protesto"
     t.date "tributario_fecha_de_actualizacion"
     t.string "tributario_facturacion_electronica"
     t.string "tributario_observacion_alerta"
@@ -237,6 +237,33 @@ ActiveRecord::Schema.define(version: 20180411163454) do
     t.string "tipo_de_certificacion_iso"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "numero_registro"
+    t.string "alerta_actualizacion"
+    t.decimal "nivel_deuda", precision: 10
+    t.string "infraccion_boletin_laboral"
+    t.string "tiene_documentos_morosos"
+    t.string "tiene_documentos_protestados"
+    t.string "alerta_sii"
+    t.string "alerta_desactualizacion_mutual"
+    t.string "es_extranjero"
+    t.integer "penalizacion_liquidez"
+    t.integer "penalizacion_test_acido"
+    t.integer "penalizacion_endeudamiento"
+    t.integer "penalizacion_nivel_deuda"
+    t.integer "pena_morosidad"
+    t.integer "pena_protestos"
+    t.integer "pena_alerta_sii"
+    t.integer "pena_iso_9000"
+    t.integer "pena_iso_18000"
+    t.integer "pena_boletin_laboral"
+    t.integer "pena_indice_frecuencia"
+    t.integer "scoring"
+    t.string "status_scoring"
+    t.string "iso_9000"
+    t.string "iso_14000"
+    t.string "iso_18000"
+    t.integer "meses_desactualizacion_mutual"
+    t.integer "pena_indice_gravedad"
   end
 
   create_table "reporters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
