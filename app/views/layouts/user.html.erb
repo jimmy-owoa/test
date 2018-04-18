@@ -102,16 +102,42 @@
   <script>
   var oTable = $('table.data-table').DataTable({
     rowCallback: function(row, data, index){
-      if(data[2] == 'Vigente'){
-        $(row).find('td:eq(1)').css('color', 'green');
+      // Colores segun alerta
+      if(data[3] == 'Naranjo'){
+        $(row).find('td:eq(2)').css('color', 'orange');
       }
-      if(data[2] == 'Inactiva'){
-        $(row).find('td:eq(1)').css('color', 'red');
+      if(data[3] == 'Verde Intenso'){
+        $(row).find('td:eq(2)').css('color', 'green');
       }
-    },
-    "columnDefs": [{ "width": "20%", "targets": 0 }]
-  });
+      if(data[3] == 'Rojo'){
+        $(row).find('td:eq(2)').css('color', 'red');
+      }
+      if(data[3] == 'Amarillo'){
+        $(row).find('td:eq(2)').css('color', 'gold');
+      }
+      // Colores según riesgo
+      if(data[11] == 'ALTO'){
+        $(row).find('td:eq(11)').css('color', 'red');
+      }
+      if(data[11] == 'MEDIO'){
+        $(row).find('td:eq(11)').css('color', 'DarkGoldenRod');
+      }
+      if(data[11] == 'BAJO'){
+        $(row).find('td:eq(11)').css('color', 'green');
+      }
 
+    },
+
+    // Se define el ancho de las columnas
+    "columnDefs": [{ "width": "20%", "targets": 0 },
+    //  Ocultar columna 3, esto es porque la columna 3 se está usando para definir el color de la colmna 2
+    // pero no quiero que se vea la 3ra columna
+    {
+               "targets": [ 3,4,5,6,7,8 ],
+               "visible": false
+           }
+  ]
+  });
 
 
   $('table.data-table tfoot th').each( function () {
@@ -136,11 +162,140 @@
           }
       } );
   } );
+
+
   </script>
 
-  <!-- <script>
-    $(document).ready(function() {
-        $('#ProveedorsTable').DataTable();
-    } );
-  </script> -->
+<script>
+$(document).ready(function() {
+    $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var checkbox_riesgo = $('#checkbox_riesgo').is(':checked');
+
+        if (checkbox_riesgo && aData[10] == 'BAJO') {
+            return true;
+        }
+        if (!checkbox_riesgo) {
+            return true;
+        }
+        return false;
+    });
+    var oTable = $('table.data-table').dataTable();
+    $('#checkbox_riesgo').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+
+});
+</script>
+<script>
+$(document).ready(function() {
+    $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var checkbox_estado = $('#checkbox_estado').is(':checked');
+
+        if (checkbox_estado && aData[4] == 'Vigente') {
+            return true;
+        }
+        if (!checkbox_estado) {
+            return true;
+        }
+        return false;
+    });
+    var oTable = $('table.data-table').dataTable();
+    $('#checkbox_estado').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+
+});
+</script>
+<script>
+$(document).ready(function() {
+    $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var checkbox_infraccion = $('#checkbox_infraccion').is(':checked');
+
+        if (checkbox_infraccion && aData[5] == 'No') {
+            return true;
+        }
+        if (!checkbox_infraccion) {
+            return true;
+        }
+        return false;
+    });
+    var oTable = $('table.data-table').dataTable();
+    $('#checkbox_infraccion').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+
+});
+</script>
+
+<script>
+
+$(document).ready(function() {
+    $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var checkbox_documentos_morosos = $('#checkbox_documentos_morosos').is(':checked');
+
+        if (checkbox_documentos_morosos && aData[6] == 'No') {
+            return true;
+        }
+        if (!checkbox_documentos_morosos) {
+            return true;
+        }
+        return false;
+    });
+    var oTable = $('table.data-table').dataTable();
+    $('#checkbox_documentos_morosos').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+
+});
+</script>
+
+<script>
+
+$(document).ready(function() {
+    $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var checkbox_documentos_protestados = $('#checkbox_documentos_protestados').is(':checked');
+
+        if (checkbox_documentos_protestados && aData[7] == 'No') {
+            return true;
+        }
+        if (!checkbox_documentos_protestados) {
+            return true;
+        }
+        return false;
+    });
+    var oTable = $('table.data-table').dataTable();
+    $('#checkbox_documentos_protestados').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+
+});
+</script>
+
+<script>
+
+$(document).ready(function() {
+    $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var checkbox_alertas_tributarias = $('#checkbox_alertas_tributarias').is(':checked');
+
+        if (checkbox_alertas_tributarias && aData[8] == 'No') {
+            return true;
+        }
+        if (!checkbox_alertas_tributarias) {
+            return true;
+        }
+        return false;
+    });
+    var oTable = $('table.data-table').dataTable();
+    $('#checkbox_alertas_tributarias').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+
+});
+</script>
 </html>

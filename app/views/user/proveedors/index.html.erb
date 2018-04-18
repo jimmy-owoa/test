@@ -53,43 +53,71 @@
   </div>
 </div> -->
 <div class="data-table-container" style="width: 90%; margin-right: auto; margin-left: auto;">
+  <div class="" style="background-color: #17a2b8; text-align: justify;"><br>
+      <h6 style="color:#FFFFFF; font-weight: bold; margin-left: 30px;"><strong>Mostrar sólo proveedores de bajo riesgo </strong> <input id="checkbox_riesgo" type="checkbox">
+        ||| Mostrar sólo proveedores vigentes <input id="checkbox_estado" type="checkbox">
+        ||| Descartar proveedores con infracción en boletín laboral <input id="checkbox_infraccion" type="checkbox"></h6>
+      <h6 style="color:#FFFFFF; font-weight: bold; margin-left: 30px;">Descartar proveedores con documentos morosos <input id="checkbox_documentos_morosos" type="checkbox">
+        ||| Descartar proveedores con documentos protestados <input id="checkbox_documentos_protestados" type="checkbox">
+        ||| Descartar proveedores con alertas tributarias <input id="checkbox_alertas_tributarias" type="checkbox"></h6><br>
+  </div>
+
   <table class="table table-hover table-striped table-bordered data-table">
 
     <thead>
       <tr>
+        <th><%= model_class.human_attribute_name(:numero_registro) %></th>
         <th><%= model_class.human_attribute_name(:rut) %></th>
         <th><%= model_class.human_attribute_name(:razon_social) %></th>
+        <th><%= model_class.human_attribute_name(:alerta_actualizacion) %></th>
         <th><%= model_class.human_attribute_name(:estado_general) %></th>
+        <th><%= model_class.human_attribute_name(:infraccion_boletin_laboral) %></th>
+        <th><%= model_class.human_attribute_name(:tiene_documentos_morosos) %></th>
+        <th><%= model_class.human_attribute_name(:tiene_documentos_protestados) %></th>
+        <th><%= model_class.human_attribute_name(:alerta_sii) %></th>
         <th><%= model_class.human_attribute_name(:contacto_nombre) %></th>
-        <th><%= model_class.human_attribute_name(:tipo_de_certificacion_iso) %></th>
-        <th><%= 'Estado' %></th>
+
+        <!-- <th><%= 'Estado' %></th> -->
+        <th><%= model_class.human_attribute_name(:riesgo) %></th>
         <th><%= 'Acción' %></th>
       </tr>
     </thead>
     <tfoot>
       <tr>
+        <th><%= model_class.human_attribute_name(:numero_registro) %></th>
         <th><%= model_class.human_attribute_name(:rut) %></th>
         <th><%= model_class.human_attribute_name(:razon_social) %></th>
+        <th><%= model_class.human_attribute_name(:alerta_actualizacion) %></th>
         <th><%= model_class.human_attribute_name(:estado_general) %></th>
+        <th><%= model_class.human_attribute_name(:infraccion_boletin_laboral) %></th>
+        <th><%= model_class.human_attribute_name(:tiene_documentos_morosos) %></th>
+        <th><%= model_class.human_attribute_name(:tiene_documentos_protestados) %></th>
+        <th><%= model_class.human_attribute_name(:alerta_sii) %></th>
         <th><%= model_class.human_attribute_name(:contacto_nombre) %></th>
-        <th><%= model_class.human_attribute_name(:tipo_de_certificacion_iso) %></th>
-        <th><%= 'Estado' %></th>
+
+        <!-- <th><%= 'Estado' %></th> -->
+        <th><%= model_class.human_attribute_name(:riesgo) %></th>
         <th><%= 'Acción' %></th>
       </tr>
     </tfoot>
     <tbody>
       <% @proveedors.each do |proveedor| %>
         <tr>
+          <td><%= proveedor.numero_registro %></td>
           <td><%= proveedor.rut %></td>
           <td><%= proveedor.razon_social %></td>
+          <td><%= proveedor.alerta_actualizacion %></td>
           <td><%= proveedor.estado_general %></td>
+          <td><%= proveedor.infraccion_boletin_laboral %></td>
+          <td><%= proveedor.tiene_documentos_morosos %></td>
+          <td><%= proveedor.tiene_documentos_protestados %></td>
+          <td><%= proveedor.alerta_sii %></td>
           <td><%= proveedor.contacto_nombre %></td>
-          <td><%= proveedor.tipo_de_certificacion_iso %></td>
-          <td><% if proveedor.estado_general == 'Vigente'%>
+          <!-- <td><% if proveedor.estado_general == 'Vigente'%>
                 <%= image_tag ("/img/up2.png"), class: "img-responsive"%>
               <% end %>
-          </td>
-
+          </td> -->
+          <td><%= proveedor.status_scoring.upcase %></td>
           <td>
             <%= link_to t('.show', :default => t("helpers.links.ver_empresa")),
                         user_proveedor_path(proveedor), :class => 'btn btn-info btn-xs' %>
@@ -98,10 +126,7 @@
         <% end %>
       </tbody>
   </table>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_user_proveedor_path,
+              :class => 'btn btn-primary' %>
 </div>
-
-
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_user_proveedor_path,
-            :class => 'btn btn-primary' %>

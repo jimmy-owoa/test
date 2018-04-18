@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180301150445) do
+=======
+ActiveRecord::Schema.define(version: 20180418170020) do
+>>>>>>> f70118746b699ca52c423084b2c586673424e52c
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -173,6 +177,92 @@ ActiveRecord::Schema.define(version: 20180301150445) do
     t.index ["project_id"], name: "index_projects_categories_on_project_id"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "proveedors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "rut"
+    t.string "razon_social"
+    t.string "estado_general"
+    t.text "observaciones"
+    t.text "observaciones_agenda"
+    t.string "situacion_competencias_basicas"
+    t.string "competencias_basicas_categoria"
+    t.float "competencias_basicas_porcentaje", limit: 24
+    t.date "competencias_basicas_fecha_vigencia"
+    t.float "competencias_basicas_infraestructura", limit: 24
+    t.float "comptencias_basicas_recursos_humanos", limit: 24
+    t.float "competencias_basicas_calidad", limit: 24
+    t.float "competencias_basicas_medio_ambiente", limit: 24
+    t.float "competencias_basicas_seguridad", limit: 24
+    t.float "competencias_basicas_conectividad_y_automatizacion", limit: 24
+    t.float "competencias_basicas_comunidad", limit: 24
+    t.integer "financiero_anio"
+    t.integer "financiero_tamano"
+    t.float "financiero_patrimonio", limit: 24
+    t.float "financiero_capital_de_trabajo", limit: 24
+    t.float "financiero_total_activos", limit: 24
+    t.float "financiero_deuda", limit: 24
+    t.float "financiero_capital_de_trabajo_relativo", limit: 24
+    t.float "financiero_liquidez", limit: 24
+    t.float "financiero_razon_de_endeudamiento", limit: 24
+    t.float "financiero_leverage", limit: 24
+    t.float "financiero_rentabilidad_activos", limit: 24
+    t.float "financiero_rentabilidad_patrimonio", limit: 24
+    t.float "financiero_rentabilidad_ventas", limit: 24
+    t.float "financiero_indice_de_quiebra", limit: 24
+    t.float "financiero_ingreso_de_explotacion", limit: 24
+    t.float "financiero_razon_acida", limit: 24
+    t.integer "antecedente_comercial_cantidad_documentos_boletin"
+    t.float "antecedente_comercial_monto_total_boletin", limit: 24
+    t.integer "antecedente_comercial_cantidad_documentos_morosidad"
+    t.integer "antecedente_comercial_monto_total_morosidad"
+    t.integer "antecedente_comercial_cantidad_documentos_protestos"
+    t.bigint "antecedente_comercial_monto_total_protesto"
+    t.date "tributario_fecha_de_actualizacion"
+    t.string "tributario_facturacion_electronica"
+    t.string "tributario_observacion_alerta"
+    t.string "tributario_observacion_irregularidad"
+    t.date "mutualidad_fecha"
+    t.float "mutualidad_indice_gravedad", limit: 24
+    t.float "mutualidad_indice_de_frecuencia", limit: 24
+    t.string "contacto_nombre"
+    t.string "contacto_telefono"
+    t.string "contacto_email"
+    t.string "instalaciones_ciudad_casa_matriz"
+    t.text "instalaciones_direccion_casa_matriz"
+    t.string "tipo_de_certificacion_iso"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "numero_registro"
+    t.string "alerta_actualizacion"
+    t.decimal "nivel_deuda", precision: 10
+    t.string "infraccion_boletin_laboral"
+    t.string "tiene_documentos_morosos"
+    t.string "tiene_documentos_protestados"
+    t.string "alerta_sii"
+    t.string "alerta_desactualizacion_mutual"
+    t.string "es_extranjero"
+    t.integer "penalizacion_liquidez"
+    t.integer "penalizacion_test_acido"
+    t.integer "penalizacion_endeudamiento"
+    t.integer "penalizacion_nivel_deuda"
+    t.integer "pena_morosidad"
+    t.integer "pena_protestos"
+    t.integer "pena_alerta_sii"
+    t.integer "pena_iso_9000"
+    t.integer "pena_iso_18000"
+    t.integer "pena_boletin_laboral"
+    t.integer "pena_indice_frecuencia"
+    t.integer "scoring"
+    t.string "status_scoring"
+    t.string "iso_9000"
+    t.string "iso_14000"
+    t.string "iso_18000"
+    t.integer "meses_desactualizacion_mutual"
+    t.integer "pena_indice_gravedad"
+  end
+
+>>>>>>> f70118746b699ca52c423084b2c586673424e52c
   create_table "reporters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
