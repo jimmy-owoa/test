@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/assets/css/slick.css">
 
-<div class="container text-center">
+<!-- <div class="container text-center">
 	<div class="jumbotron">
 		<div class="row">
 			<div class="col-lg-12">
@@ -8,7 +8,7 @@
 				<h4>Aquí encontrarás información relevante para tu negocio y un mundo de oportunidades, rubros y servicios, útiles para apoyar el desarrollo de tus actividades empresarias.</h4><hr>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row"> -->
 			<!-- <div class="col-lg-6">
 				<div class="card card-inverse">
 						<div class="card-block">
@@ -18,7 +18,25 @@
 						</div>
 				</div>
 			</div> -->
-			<div class="col-lg-12">
+			<div class="container" style="max-width: 1024px !important;">
+				<div class="row">
+					<div class="card">
+						<div class="card-content" align="center">
+							<h1 class="card-title"><strong>Bienvenido a Agenda Empresaria</strong></h1>
+
+							<img src="/img/logo_800.png" style="display: block;height: 332px;border-radius: 9px;margin: 25px auto;">
+							<p class="center" style="font-size: 1.15em; ">
+								Aquí encontrarás información relevante para tu negocio y un mundo de oportunidades, rubros y servicios, útiles para apoyar el desarrollo de tus actividades empresarias.
+							</p>
+							<%= link_to 'VER PROVEEDORES', user_proveedors_path, class:'btn btn-primary', style: 'background-color: #3493c5; color: #FFFFFF;     border-color: #3493c5;'%>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="col-lg-12">
 				<div class="card card-inverse">
 						<div class="card-block">
 							<h3 class="card-title"><strong>Proveedores</strong></h3>
@@ -31,7 +49,7 @@
 		<br>
 		<div id="container" style="min-width: 310px; height: 600px; max-width: 9000px; margin: 0 auto"></div>
 	</div>
-</div>
+</div> -->
 
 
 <%= Gon::Base.render_data %>
