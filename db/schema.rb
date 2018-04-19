@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180301150445) do
-=======
-ActiveRecord::Schema.define(version: 20180418170020) do
->>>>>>> f70118746b699ca52c423084b2c586673424e52c
+ActiveRecord::Schema.define(version: 20180419012435) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -87,8 +83,18 @@ ActiveRecord::Schema.define(version: 20180418170020) do
   create_table "categories_projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "project_id"
     t.bigint "category_id"
+    t.bigint "project_type_id"
+    t.bigint "client_id"
+    t.bigint "clients_id"
+    t.bigint "adjudication_id"
+    t.bigint "main_work_id"
+    t.index ["adjudication_id"], name: "index_categories_projects_on_adjudication_id"
     t.index ["category_id"], name: "index_categories_projects_on_category_id"
+    t.index ["client_id"], name: "index_categories_projects_on_client_id"
+    t.index ["clients_id"], name: "index_categories_projects_on_clients_id"
+    t.index ["main_work_id"], name: "index_categories_projects_on_main_work_id"
     t.index ["project_id"], name: "index_categories_projects_on_project_id"
+    t.index ["project_type_id"], name: "index_categories_projects_on_project_type_id"
   end
 
   create_table "newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -177,8 +183,6 @@ ActiveRecord::Schema.define(version: 20180418170020) do
     t.index ["project_id"], name: "index_projects_categories_on_project_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "proveedors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "rut"
     t.string "razon_social"
@@ -260,9 +264,12 @@ ActiveRecord::Schema.define(version: 20180418170020) do
     t.string "iso_18000"
     t.integer "meses_desactualizacion_mutual"
     t.integer "pena_indice_gravedad"
+    t.string "pdf_file_name"
+    t.string "pdf_content_type"
+    t.integer "pdf_file_size"
+    t.datetime "pdf_updated_at"
   end
 
->>>>>>> f70118746b699ca52c423084b2c586673424e52c
   create_table "reporters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

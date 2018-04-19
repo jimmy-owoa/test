@@ -249,9 +249,12 @@
       </div>
   </div>
 
-  <div class="container" align="center">
-  <%= link_to image_tag("/assets/images/pdf.png", height: '40'), user_proveedor_path(@proveedor, :format => :pdf), :target => "_blank" %>
 
+  <div class="container" align="center">
+  <%= link_to '<button type="button" class="btn btn-info">Descargar resumen PDF</button>'.html_safe, user_proveedor_path(@proveedor, :format => :pdf), :target => "_blank"  %>
+  <% if @proveedor.pdf.exists?%>
+    <%= link_to '<button type="button" class="btn btn-info">Descargar Balance estado financiero</button>'.html_safe, @proveedor.pdf.url, target: "_blank"  %>
+  <% end %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
                 user_proveedors_path, :class => 'btn btn-default'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
